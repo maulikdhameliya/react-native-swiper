@@ -284,6 +284,7 @@ export default class extends Component {
 
     this.internals = {
       ...this.internals,
+      offset: initState.offset,
       isScrolling: false
     }
     return initState
@@ -328,7 +329,14 @@ export default class extends Component {
 
     this.setState(state)
   }
-
+  
+  scrollToStart = () => {
+    if(this.scrollView){
+      this.scrollView.scrollTo({ x: 0, y: 0, animated: false })
+      
+    }
+  }
+  
   loopJump = () => {
     if (!this.state.loopJump) return
     const i = this.state.index + (this.props.loop ? 1 : 0)
