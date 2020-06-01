@@ -329,14 +329,14 @@ export default class extends Component {
 
     this.setState(state)
   }
-  
+
   scrollToStart = () => {
     if(this.scrollView){
       this.scrollView.scrollTo({ x: 0, y: 0, animated: false })
-      
+
     }
   }
-  
+
   loopJump = () => {
     if (!this.state.loopJump) return
     const i = this.state.index + (this.props.loop ? 1 : 0)
@@ -449,17 +449,17 @@ export default class extends Component {
       cb()
       if (Platform.OS === 'android') {
         if (this.state.index === 0) {
-          this.props.horizontal
-            ? this.scrollView.scrollTo({
-                x: state.width,
-                y: 0,
-                animated: false
-              })
-            : this.scrollView.scrollTo({
-                x: 0,
-                y: state.height,
-                animated: false
-              })
+          // this.props.horizontal
+          //   ? this.scrollView.scrollTo({
+          //       x: state.width,
+          //       y: 0,
+          //       animated: false
+          //     })
+          //   : this.scrollView.scrollTo({
+          //       x: 0,
+          //       y: state.height,
+          //       animated: false
+          //     })
         } else if (this.state.index === this.state.total - 1) {
           this.props.horizontal
             ? this.scrollView.scrollTo({
